@@ -20,5 +20,5 @@ for i, q in enumerate(questions):
 
 if st.button("回答を送信する"):
     correct_answers = sum(a == b for a, b in zip(answers, [q['answer'] for q in questions]))
-    st.write(f"終了！あなたの正答数は {correct_answers} / 10 です。")
-    st.write(f"正答率は {correct_answers * 10}% です。")
+    st.markdown(f"## 終了！あなたの正答数は {correct_answers} / 10 です。")
+    st.markdown(f"# 正答率は **{correct_answers * 10}%** です！")
