@@ -10,18 +10,13 @@ questions = [
 random.shuffle(questions)  # 問題をランダムにする
 questions = questions[:10]  # 最初の10問だけを取る
 
-correct_answers = 0
-
+answers = []
 for i, q in enumerate(questions):
     st.write(f"問題 {i+1}: {q['question']}")
-    answer = st.radio("回答:", q['choices'])
+    answer = st.radio(f"回答 {i+1}:", q['choices'])
+    answers.append(answer)
 
-    if st.button("回答する"):
-        if answer == q['answer']:
-            st.write("正解！")
-            correct_answers += 1
-        else:
-            st.write(f"不正解。正解は {q['answer']} です。")
-
-st.write(f"終了！あなたの正答数は {correct_answers} / 10 です。")
-st.write(f"正答率は {correct_answers * 10}% です。")
+if st.button("回答を送信する"):
+    correct_answers = sum(a == b for a, b in zip(answers, [q['answer'] for q in questions]))
+    st.write(f"終了！あなたの正答数は {correct_answers} / 10 です。")
+    st.write(f"正答率は {correct_answers * 10}% です。")
