@@ -16,12 +16,12 @@ st.title('ジュニア＆レギュラー復習問題')
 st.write('ジュニアダイエットマスター復習問題')
 
 answers = []
-for i, q in enumerate(questions):
+for i, q in enumerate(questions_j):
     st.write(f"問題 {i+1}: {q['question']}")
     answer = st.radio(f"回答 {i+1}:", q['choices'])
     answers.append(answer)
 
 if st.button("回答を送信する"):
-    correct_answers = sum(a == b for a, b in zip(answers, [q['answer'] for q in questions]))
+    correct_answers = sum(a == b for a, b in zip(answers, [q['answer'] for q in questions_j]))
     st.markdown(f"## 終了！あなたの正答数は {correct_answers} / 10 です。")
     st.markdown(f"# 正答率は **{correct_answers * 10}%** です！")
