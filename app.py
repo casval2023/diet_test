@@ -9,8 +9,8 @@ questions_j = [
     # 他の問題を追加
 ]
 
-random.shuffle(questions)  # 問題をランダムにする
-questions = questions[:10]  # 最初の10問だけを取る
+#random.shuffle(questions)  # 問題をランダムにする
+#questions = questions[:10]  # 最初の10問だけを取る
 
 st.title('ジュニア＆レギュラー復習問題')
 st.write('ジュニアダイエットマスター復習問題')
